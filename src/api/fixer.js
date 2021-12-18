@@ -4,6 +4,6 @@ export default axios.create({
     baseURL: 'https://freecurrencyapi.net/api/v2',
     
     params: {
-        "access_key": '5433d780-5df8-11ec-b6d8-277ce31b1c65',
+        "access_key": 'e2e68500-5d93-11ec-a1e1-a9e84fac3c73',
     }
 });

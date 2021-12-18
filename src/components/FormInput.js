@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeBase, selectCurrency } from "../features/currency/currencySlice";
 import { getExchangeRates } from "../features/currency-api/currencyApiSlices";
 import { selectDate } from "../features/date/dateSlice";
+import { Link } from "react-router-dom"
 
 const FormInput = (props) => {
 
@@ -15,6 +16,7 @@ const FormInput = (props) => {
         const retVal = event.target.value;
         console.log(retVal);
         dispatch(changeBase(retVal));
+        
     }
 
     const handleRetrieveDataPressed = () => {
@@ -43,7 +45,9 @@ const FormInput = (props) => {
             </div>
         </form>
         <div className="retrieve-data-btn">
+            <Link to={currency.input}>
                 <Button color="blue" text="Retrieve Data" onClick={handleRetrieveDataPressed} />    
+            </Link>
         </div>
         </div>
     )

@@ -15,7 +15,7 @@ function App() {
 
   const dispatch = useDispatch();
   const apiList = useSelector(selectApiList);
-  console.log(apiList.currencyApi);
+ 
 
   const dateFormat = () => {
     const today = new Date();
@@ -39,15 +39,11 @@ function App() {
     <div className="App">
       <Header title={"Weekly Average Exchange Rates"} />
         <FormInput fromLabel="From" toLabel="To" />
-        <p>We have found {apiList.currencyApi.list.length}  results</p>
         <Routes>
-          {apiList.currencyApi.list.length > 0 ? (
-            <Route path='/usd' element={<EuroUsdScreen />} />
-          ) : (
-            <Route path='/gbp' element={<UsdGbpScreen />} />
-          )}
+            <Route path='/EUR' element={<EuroUsdScreen />} />
+            <Route path='/USD' element={<UsdGbpScreen />} />
       </Routes>
-      <SimpleLineChart list = {apiList.currencyApi.list}/>
+      {/* <SimpleLineChart list = {apiList.currencyApi.list}/> */}
     </div>
     </Router>
   );

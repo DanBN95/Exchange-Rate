@@ -17,7 +17,8 @@ export const getExchangeRates = createAsyncThunk(
               date_to: date.today
             }
         })
-        .then((res) => console.log(res))
+        .then((res) => localStorage.setItem("EXCHANGEDATA", JSON.stringify(res.data.data)))
+        // .then((res) => console.log(res.data.data))
     }
 )
 
@@ -29,17 +30,16 @@ const exchangeRatesSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(getExchangeRates.fulfilled, (state, action) => {
-            state.list = action.payload;
-            console.log("state")
+            console.log(action);
+            state.list = JSON.parse(localStorage.getItem("EXCHANGEDATA"));
             state.status = 'success'
+
         });
         builder.addCase(getExchangeRates.pending, (state, action) => {
             state.status = 'loading'
-            console.log("state")
         });
         builder.addCase(getExchangeRates.rejected, (state, action) => {
             state.status = 'failed'
-            console.log("state")
         });
     },
 })

@@ -69,3 +69,19 @@ code {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.exchange-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  position: relative;
+  tab-size: 4;
+  
+}
+
+.exchange-table-div {
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+

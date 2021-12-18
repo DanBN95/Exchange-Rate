@@ -47,13 +47,14 @@ const data = [
   ];
 
 const SimpleLineChart = (props) => {
+  console.log("simple chart")
+  console.log(props.data);
       return (
         <ResponsiveContainer width="100%" aspect={3}>
           <LineChart
             width={500}
             height={300}
-            // data={props.list}
-            data={data}
+            data={props.data}
             margin={{
               top: 5,
               right: 30,
@@ -62,12 +63,11 @@ const SimpleLineChart = (props) => {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
       );
