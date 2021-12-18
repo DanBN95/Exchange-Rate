@@ -21,9 +21,6 @@ const EuroUsdScreen = () => {
         const dataExchange = apiList.currencyApi.list[property];
         for (const cur in dataExchange) {
             if (cur === currency.output) {
-                console.log("date: " + property);
-                console.log("value: " + dataExchange[cur])
-                //addNewItem(property, dataExchange[cur]);
                 map.set(property, dataExchange[cur]);
                 break;
             }
@@ -32,13 +29,12 @@ const EuroUsdScreen = () => {
 
     let arr = Array.from(map, ([key, value]) => ({date: key, value: value}));
     setFilteredData(arr);
-    console.log(filteredData);
     setIsFiltered(true);
   }
 
   useEffect(() => {
     filterByExchangeRate();
-  }, [])
+  }, [apiList])
 
     return (
         <div>

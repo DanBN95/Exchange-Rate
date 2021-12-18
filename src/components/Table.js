@@ -4,9 +4,6 @@ const Table = (props) => {
 
     const currency = useSelector(selectCurrency);
     
-    console.log("#######")
-    console.log(props.data);
-
     const renderTableData = (item, index) => {
         return (
             <tr key={index}>

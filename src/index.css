@@ -17,19 +17,25 @@ code {
 .header {
   box-sizing: border-box;
   width: 100%;
+  height: 25%;
   display: flex;
   justify-content: center;
   align-items: baseline;
   padding: 1em;
-  margin-bottom: 2em;
-  background-color: #F8783F;
+  background-color: #F0B27A;
   color: #FFF;
+  margin-top: 100;
+}
+
+.form-div {
+  background-color: #f2f4f6 ;
 }
 
 .form-container {
  display: flex;
  justify-content: center;
  align-items: center;
+ background-color: '#F2F4F6' ;
 }
 
 .form-control {

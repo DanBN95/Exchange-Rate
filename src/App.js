@@ -1,21 +1,17 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import FormInput from "./components/FormInput";
 import Header from "./components/Header";
 import EuroUsdScreen from "./screens/EuroUsdScreen";
 import UsdGbpScreen from "./screens/UsdGbpScreen";
-import SimpleLineChart from "./components/SimpleLineChart";
 import { useDispatch, useSelector } from "react-redux";
-import { selectApiList } from "./features/currency-api/currencyApiSlices";
-import { selectDate, setTime } from "./features/date/dateSlice";
+import { setTime } from "./features/date/dateSlice";
 
 
 
 function App() {
 
-  const dispatch = useDispatch();
-  const apiList = useSelector(selectApiList);
- 
+  const dispatch = useDispatch(); 
 
   const dateFormat = () => {
     const today = new Date();
@@ -43,7 +39,6 @@ function App() {
             <Route path='/EUR' element={<EuroUsdScreen />} />
             <Route path='/USD' element={<UsdGbpScreen />} />
       </Routes>
-      {/* <SimpleLineChart list = {apiList.currencyApi.list}/> */}
     </div>
     </Router>
   );

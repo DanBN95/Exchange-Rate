@@ -14,19 +14,16 @@ const FormInput = (props) => {
 
     const handleSelectOnChange = (event) => {
         const retVal = event.target.value;
-        console.log(retVal);
         dispatch(changeBase(retVal));
         
     }
 
     const handleRetrieveDataPressed = () => {
-        console.log("btn pressed")
-        console.log(date);
         dispatch(getExchangeRates({date, currency}))
     }
 
     return (
-        <div>
+        <div className="form-div">
         <form className="form-container">
             <div className="form-control">
                 <label>

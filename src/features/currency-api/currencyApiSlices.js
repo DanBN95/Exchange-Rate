@@ -6,10 +6,6 @@ import { selectDate } from "../date/dateSlice";
 export const getExchangeRates = createAsyncThunk(
     'exchangeRates/getExchangeRates',
     async ({date, currency}, {dispatch, getState}) => {
-        console.log("using api")
-        console.log(dispatch)
-        console.log(date)
-        console.log(currency)
         return await fixer.get('/historical', {
             params: {
               base_currency: currency.input,    // ****CHANGE***
@@ -18,7 +14,6 @@ export const getExchangeRates = createAsyncThunk(
             }
         })
         .then((res) => localStorage.setItem("EXCHANGEDATA", JSON.stringify(res.data.data)))
-        // .then((res) => console.log(res.data.data))
     }
 )
 
@@ -30,7 +25,6 @@ const exchangeRatesSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(getExchangeRates.fulfilled, (state, action) => {
-            console.log(action);
             state.list = JSON.parse(localStorage.getItem("EXCHANGEDATA"));
             state.status = 'success'
 
