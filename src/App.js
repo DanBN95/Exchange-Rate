@@ -6,6 +6,7 @@ import EuroUsdScreen from "./screens/EuroUsdScreen";
 import UsdGbpScreen from "./screens/UsdGbpScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { setTime } from "./features/date/dateSlice";
+import background from './assets/exchange_bg.jpg'
 
 
 

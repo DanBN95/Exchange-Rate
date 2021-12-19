@@ -13,7 +13,7 @@ const Table = (props) => {
     )}
 
     return (
-        <div className="exchange-table-div">
+        <div className="exchange-table-div" style={{backgroundColor: 'white'}}>
             <table className="exchange-table">
                 <thead>
                     <tr>

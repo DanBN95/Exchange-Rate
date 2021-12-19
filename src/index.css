@@ -14,10 +14,19 @@ code {
     monospace;
 }
 
+.App {
+  background-color:'#F7F9F9';
+  background-position: center;
+  background-size: auto;
+  background-repeat: 'no-repeat';
+  width: '100vw';
+  height: '100vh';
+}
+
 .header {
   box-sizing: border-box;
   width: 100%;
-  height: 25%;
+  height: 35%;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -31,6 +40,8 @@ code {
   background-color: #ECEBEB ;
   height: 80%;
   margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .form-container {
@@ -48,6 +59,7 @@ code {
 
 .form-control label {
   display: block;
+  font-weight: bold;
 }
 
 .form-control select {
