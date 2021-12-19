@@ -2,6 +2,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const SimpleLineChart = (props) => {
       return (
+        <div className="simple-line-chart">
         <ResponsiveContainer width="100%" aspect={3}>
           <LineChart
             width={500}
@@ -22,6 +23,7 @@ const SimpleLineChart = (props) => {
             <Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
+        </div>
       );
 }
 

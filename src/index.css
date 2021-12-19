@@ -28,7 +28,9 @@ code {
 }
 
 .form-div {
-  background-color: #f2f4f6 ;
+  background-color: #ECEBEB ;
+  height: 80%;
+  margin-top: 5%;
 }
 
 .form-container {
@@ -115,4 +117,5 @@ code {
   margin-bottom: 10%;
   margin-top: 5%;
 }
+
 
