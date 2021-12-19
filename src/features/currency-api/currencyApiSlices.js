@@ -34,6 +34,7 @@ const exchangeRatesSlice = createSlice({
         });
         builder.addCase(getExchangeRates.rejected, (state, action) => {
             state.status = 'failed'
+            state.list = JSON.parse(localStorage.getItem("EXCHANGEDATA"));
         });
     },
 })

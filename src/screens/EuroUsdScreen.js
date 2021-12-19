@@ -6,7 +6,7 @@ import Table from "../components/Table";
 import { selectCurrency } from "../features/currency/currencySlice";
 
 const EuroUsdScreen = () => {
-    
+
     const currency = useSelector(selectCurrency);
     const apiList = useSelector(selectApiList);
 
