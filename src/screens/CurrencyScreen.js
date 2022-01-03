@@ -5,7 +5,7 @@ import { selectApiList } from "../features/currency-api/currencyApiSlices";
 import Table from "../components/Table";
 import { selectCurrency } from "../features/currency/currencySlice";
 
-const EuroUsdScreen = () => {
+const CurrencyScreen = (props) => {
 
     const currency = useSelector(selectCurrency);
     const apiList = useSelector(selectApiList);
@@ -37,8 +37,10 @@ const EuroUsdScreen = () => {
   }, [apiList])
 
     return (
-        <div>
-            <h1>EUR - USD</h1>
+        <section>
+            <div className="screen-title">
+                <h2>{props.title}</h2>
+            </div>
             {isFiltered ? (
                 <div>
                 <Table data = {filteredData} />
@@ -49,8 +51,8 @@ const EuroUsdScreen = () => {
                 </>
             )}
             
-        </div>
+        </section>
     )
 }
 
-export default EuroUsdScreen
+export default CurrencyScreen;
