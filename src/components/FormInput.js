@@ -23,30 +23,35 @@ const FormInput = (props) => {
     }
 
     return (
-        <div className="form-div">
-        <form className="form-container">
-            <div className="form-control">
-                <label>
-                    {props.fromLabel}
-                </label>
-                    <select onChange={handleSelectOnChange}>
-                        <option value="EUR">EUR</option>
-                        <option value="USD">USD</option>
-                    </select>
+            <section className="form-section">
+                <div className="form-title">
+                        <h2>Currency</h2>
+                    </div>
+                <div className="container">
+                        <form className="form">
+                            <div className="select-div">
+                                <label>
+                                    {props.fromLabel}
+                                </label>
+                                <select onChange={handleSelectOnChange}>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                            <div className="text-div">
+                                <label>
+                                    {props.toLabel}
+                                </label>
+                                <input className="form-concurrency" value={currency.output} readOnly style={{ backgroundColor: 'white', borderRadius: 5, borderWidth: 0.5}}/>
+                            </div>
+                        </form>
+                </div>
+            <div className="submit-div">
+                <Link to={currency.input}>
+                    <Button className="retrieve-data-btn" color="#007AF3" text="Retrieve Data" onClick={handleRetrieveDataPressed} />    
+                </Link>
             </div>
-            <div className="form-control">
-                <label>
-                    {props.toLabel}
-                </label>
-                    <input className="form-concurrency" value={currency.output} readOnly style={{ backgroundColor: 'white', borderRadius: 5, borderWidth: 0.5}}/>
-            </div>
-        </form>
-        <div className="retrieve-data-btn">
-            <Link to={currency.input}>
-                <Button color="blue" text="Retrieve Data" onClick={handleRetrieveDataPressed} />    
-            </Link>
-        </div>
-        </div>
+            </section>
     )
 }
 

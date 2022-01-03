@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ color, text, onClick }) => {
+const Button = ({ classname, color, text, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -11,9 +11,10 @@ const Button = ({ color, text, onClick }) => {
             color: 'white',
             fontWeight: 600,
             borderRadius: 15,
-            fontFamily: 'inherit'
+            fontFamily: 'inherit',
+            cursor: 'pointer'
         }}
-      className='btn'
+      className={classname}
     >
       {text}
     </button>
@@ -21,7 +22,7 @@ const Button = ({ color, text, onClick }) => {
 }
 
 Button.defaultProps = {
-  color: 'steelblue',
+  color: '#007AF3',
 }
 
 Button.propTypes = {
